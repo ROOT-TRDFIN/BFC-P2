@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC - Media | Crew</title>
+    <!---favicon-->
+    <link rel="icon" href="{% static 'assets/img/favicon1.png' %}" type="image/gif" >
+    <!-- OwlCarousel  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+</head>
+<body class="project-body">
+
+    <!--Audio-->
+    <audio id="clickSound" src="{% static 'assets/img/audio/shutter.mp3' %}"></audio>
+    <!-- Spinner -->
+    <div id="loading-spinner">
+        <video id="loading-video" autoplay muted>
+            <source src="{% static 'assets/video/IMG_6213.MOV' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="container-fluid project-lg">
+        <div class="row">
+            <div class="col-2 navbar-container"> <!-- Navbar-lg START -->
+                <a href="{% url 'index' %}"><img src="{% static 'assets/img/BFCLOGO.png' %}" alt="BFCLOGO" class="BFClogo"></a>
+                <img src="{% static 'assets/img/REEL 2.jpg' %}" alt="Reel" class="reel-line">
+                <div class="menu">
+                    <div class="menu-open-button" id="soundButton">
+                        <img src="{% static 'assets/img/Reel box.png' %}" alt="Reel" class="menu-image" id="menuToggle">
+                    </div>
+                    <div class="menu-items" style="background:url('{% static 'assets/img/filmv2.png' %}') no-repeat">
+                        <a href="{% url 'index' %}" class="menu-item soundButton">Home</a>
+                        <a href="{% url 'about' %}" class="menu-item soundButton">Our Story</a>
+                        <a href="{% url 'works' %}" class="menu-item soundButton">Craftings</a>
+                        <a href="{% url 'service' %}" class="menu-item soundButton">Offerings</a>
+                        <a href="{% url 'projects' %}" class="menu-item soundButton">Moments</a>
+                        <a href="{% url 'gallery' %}" class="menu-item soundButton">Art Vaults</a>
+                        <a href="{% url 'team' %}" class="menu-item active soundButton">The Crew</a>
+                        <a href="https://virtuai.billionairefrequencycode.com" target="_blank" class="menu-item">Virtu AI</a>
+                        <a href="{% url 'contact' %}" class="menu-item soundButton">Connect</a>
+                        <div class="nav-foot">
+                            <p>©2024 BFC - Media All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Navbar-lg END -->
+            <div class="col-10 about-content">
+                <div class="team-header">
+                    <h1>MEET OUR TEAM LEADERS</h1>
+                    <div class="background-text">MEET OUR TEAM LEADERS</div>
+                </div>
+                <!-- Project START -->
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="{% static 'assets/img/team/san.png' %}" alt="">
+                        <div class="project-name-1">
+                            <h3>Dr.SANJAY THAKRAR</h3>
+                            <p>Founder</p>
+                            <a href="https://www.linkedin.com/in/dr-sanjay-thakrar-717689b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhEObDW2wRVSopv4zWKWwMA%3D%3D" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/team/uma.png' %}" alt="">
+                        <div class="project-name-1">
+                            <h3>Dr.UMA JAGADEESAN</h3>
+                            <p>Head of Operation & Strategy</p>
+                            <a href="https://www.linkedin.com/in/dr-sivakumari-jagadeesan-b2542417?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5d%2BJOPIpQPKMy3ER1%2BWcYw%3D%3D" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/team/ud.png' %}" alt="">
+                        <div class="project-name-1">
+                            <h3>P.UDAYAKUMAR</h3>
+                            <p>Senior Advisor - New Ventures</p>
+                            <a href="https://www.linkedin.com/in/pechimuthu-udayakumar-52327825?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BokSE6SC4S0SsT2KNEWSoig%3D%3D" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/team/sh.png' %}" alt="">
+                        <div class="project-name-1">
+                            <h3>SHARON SAMUEL</h3>
+                            <p>Media Lead</p>
+                            <a href="https://www.linkedin.com/in/sharon-samuel-7480ba26?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B3NbVx694QD%2B8Nsebvp8wxQ%3D%3D" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="overplay">
+                </div>
+                <div class="overplay-bottom">
+                </div>
+            </div> <!-- Project END -->
+        </div>
+    </div>
+
+    <!-- Navbar-sm START -->
+    <div class="navbar-sm">
+        <div class="logo-sm animate__animated animate__fadeInLeft animate__delay-3s">
+            <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="">
+        </div>
+        <button class="toggle-btn">
+            <img src="{% static 'assets/img/close clapboard.png' %}" alt="">
+        </button>
+    </div>
+
+    <div class="nav-menu-sm">
+        <div class="nav-header-sm">
+            <div class="logo-sm">
+                <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="">
+            </div>
+            <button class="close-btn">
+                <i class="fa-brands fa-xing"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">Our Story</a></li>
+            <li><a href="{% url 'works' %}" >Craftings</a></li>
+            <li><a href="{% url 'service' %}">Offerings</a></li>
+            <li><a href="{% url 'projects' %}">Moments</a></li>
+            <li><a href="{% url 'gallery' %}">Art Vaults</a></li>
+            <li><a href="{% url 'team' %}" class="active">The Crew</a></li>
+            <li><a href="https://virtuai.billionairefrequencycode.com" target="_blank">Virtu AI</a></li>
+            <li><a href="{% url 'contact' %}">Connect</a></li>
+        </ul>
+    </div>
+    <!-- Navbar-sm END -->
+
+    <!-- Project-sm START -->
+    <div class="container-fluid project-small">
+        <div class="team-header">
+            <h1>MEET OUR TEAM LEADERS</h1>
+            <div class="background-text">MEET OUR TEAM LEADERS</div>
+        </div>
+        <div class="row">
+            <div class="col-12 project-sm animate__animated animate__fadeInUp animate__delay-3s">
+                <img src="{% static 'assets/img/team/san.png' %}" alt="">
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="text-section-main">
+                    <div class="text-section">
+                        <div></div>
+                        <p>Dr.SANJAY THAKRAR</p>
+                        <div></div>
+                    </div>
+                    <div class="text-section">
+                        <div></div>
+                        <p>Founder</p>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 project-sm animate__animated animate__fadeInUp animate__delay-4s">
+                <img src="{% static 'assets/img/team/uma.png' %}" alt="">
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="text-section-main">
+                    <div class="text-section">
+                        <div></div>
+                        <p>Dr.UMA JAGADEESAN</p>
+                        <div></div>
+
+                    </div>
+                    <div class="text-section ">
+                        <div></div>
+                        <p>Head of Operation & Strategy</p>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 project-sm animate__animated animate__fadeInUp animate__delay-5s">
+                <img src="{% static 'assets/img/team/ud.png' %}" alt="">
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="text-section-main">
+                    <div class="text-section">
+                        <div></div>
+                        <p>P.UDAYAKUMAR</p>
+                        <div></div>
+                    </div>
+                    <div class="text-section small-txt">
+                        <div></div>
+                        <p>Senior Advisor - New Ventures</p>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 project-sm animate__animated animate__fadeInUp animate__delay-5s">
+                <img src="{% static 'assets/img/team/sh.png' %}" alt="">
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="text-section-main">
+                    <div class="text-section">
+                        <div></div>
+                        <p>SHARON SAMUEL</p>
+                        <div></div>
+                    </div>
+                    <div class="text-section small-txt">
+                        <div></div>
+                        <p>Media Lead</p>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar-sm END -->
+    <!-- Fontawesome -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://kit.fontawesome.com/99e1031307.js" crossorigin="anonymous"></script>
+    <!-- Custom Js -->
+    <script src="{% static 'script/main.js' %}"></script>
+    <script src="{% static 'script/test.js' %}"></script>
+</body>
+
+</html>

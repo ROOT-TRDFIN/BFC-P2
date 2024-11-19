@@ -1,0 +1,434 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFC - Media | Offerings</title>
+  <!---favicon-->
+  <link rel="icon" href="{% static 'assets/img/favicon1.png' %}" type="image/gif" >
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <!-- Animate -->
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+</head>
+<body class="service-body project-body">
+  <!--Audio-->
+  <audio id="clickSound" src="{% static 'assets/img/audio/shutter.mp3' %}"></audio>
+  <!-- Spinner -->
+  <div id="loading-spinner">
+    <video id="loading-video" autoplay muted>
+      <source src="{% static 'assets/video/IMG_6213.MOV' %}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="container-fluid index-lg">
+    <div class="row no-gutters">
+      <div class="col-2 navbar-container">
+        <!-- Navbar-lg START -->
+        <a href="{% url 'index' %}"><img src="{% static 'assets/img/BFCLOGO.png' %}" alt="BFCLOGO" class="BFClogo" /></a>
+        <img src="{% static 'assets/img/REEL 2.jpg' %}" alt="Reel" class="reel-line" />
+        <div class="menu">
+          <div class="menu-open-button">
+            <img src="{% static 'assets/img/Reel box.png' %}" alt="Reel" class="menu-image" id="menuToggle" />
+          </div>
+          <div class="menu-items" style="background:url('{% static 'assets/img/filmv2.png' %}') no-repeat">
+            <a href="{% url 'index' %}" class="menu-item soundButton">Home</a>
+            <a href="{% url 'about' %}" class="menu-item soundButton">Our Story</a>
+            <a href="{% url 'works' %}" class="menu-item soundButton">Craftings</a>
+            <a href="{% url 'service' %}" class="menu-item active soundButton">Offerings</a>
+            <a href="{% url 'projects' %}" class="menu-item soundButton">Moments</a>
+            <a href="{% url 'gallery' %}" class="menu-item soundButton">Art Vaults</a>
+            <a href="{% url 'team' %}" class="menu-item soundButton">Crew</a>
+            <a href="https://virtuai.billionairefrequencycode.com" target="_blank" class="menu-item">Virtu AI</a>
+            <a href="{% url 'contact' %}" class="menu-item soundButton">Connect</a>
+            <div class="nav-foot">
+              <p>©2024 BFC - Media All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar-lg END -->
+      <div class="col-10">
+        <!-- Right-side START -->
+        <div class="service-container">
+          <div class="contact-header">
+            <h1>Services</h1>
+            <div class="background-text">SERVICES</div>
+          </div>
+          <div class="service-main">
+          <div class="service">
+            <div class="service-gif">
+                <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+              </div>
+            <h1>Divisions and Services</h1>
+            <h1>Web Series Projects</h1>
+            <p>
+              At Billionaire Frequency Code Media, we are passionate about
+              storytelling. Our web series division focuses on:
+            </p>
+            <ul>
+              <li>
+                <span>Talented Team of Story Writers</span> - Our team of
+                skilled writers who have a flair for crafting compelling and
+                engaging narratives bring fresh perspectives and creative
+                ideas that form the backbone of our web series projects.
+              </li>
+              <li>
+                <span>Production and Shooting</span> - Our experienced
+                production team takes these scripts and brings them to life
+                through meticulous planning and execution. From pre-production
+                to post-production, we ensure that every aspect of the process
+                is handled with professionalism and attention to detail,
+                resulting in high-quality web series that captivate our
+                audience.
+              </li>
+            </ul>
+          </div>
+          <div class="service">
+            <div class="service-gif">
+              <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+            </div>
+            <h1>Production House</h1>
+            <p>Our Production House is the heart of our operations, where:</p>
+            <ul>
+              <li>
+                <span>Videography and Photography: </span> Our skilled
+                videographers and photographers use state-of-the-art equipment
+                to capture stunning visuals. Whether it's a corporate event, a
+                personal milestone, or a promotional campaign, we deliver
+                high-quality video and photographic content that meets the
+                highest standards of excellence.
+              </li>
+              <li>
+                <span>Poster Design: </span> Visual communication is an
+                integral part of our production process. If required, our
+                creative team designs eye-catching posters that complement our
+                video projects, ensuring that they grab attention and convey
+                the essence of the content effectively
+              </li>
+            </ul>
+          </div>
+          <div class="service">
+            <div class="service-gif">
+              <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+            </div>
+            <h1>YouTube Channels</h1>
+            <p>
+              To reach a diverse audience, we are launching four distinct
+              YouTube channels:
+            </p>
+            <ul>
+              <li>
+                <span>Entertainment Channel: </span> This channel is dedicated
+                to delivering a wide range of entertaining content, from
+                comedy skits and drama series to reality shows and lifestyle
+                assets/video. Our goal is to feature content that resonates with
+                viewer's interests and preferences.
+              </li>
+              <li>
+                <span>Food Channel: </span> This show features an engaging
+                anchor who travels across various geographical locations in
+                Tamil Nadu, to discover a wide array of vegetarian dishes. Our
+                aim is to present the vast variety of vegetarian dishes and
+                their authentic roots, providing viewers with an opportunity
+                to appreciate the culinary options available and most
+                importantly to dispel the myth that vegetarian food offers
+                fewer options and lacks flavour, proving that vegetarian
+                cuisine can be both diverse and delicious.
+              </li>
+              <li>
+                <span>Kids Channel: </span> Aimed at a younger audience
+                gathering an age group of 10 - 12-year-old children, our kids'
+                channel offers educational content that fosters creativity,
+                learning, and curiosity. We collaborate with doctors and
+                psychiatrists to ensure our content is developmentally
+                appropriate and provides valuable guidance on what activities
+                and learning experiences are beneficial at each stage of
+                childhood. This collaboration ensures that our programming not
+                only entertains but also supports the healthy growth and
+                development of our young viewers.
+              </li>
+              <li>
+                <span>Knowledge Information Channel: </span>This channel
+                focuses on sharing valuable insights, tips, and information
+                across various domains such as business, technology, health,
+                and personal development. Our content is designed to educate
+                and empower our viewers, helping them stay informed and make
+                better decisions in their lives.
+              </li>
+            </ul>
+          </div>
+          <div class="service">
+            <div class="service-gif">
+              <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+            </div>
+            <h1>Technological Projects</h1>
+            <p>
+              At Billionaire Frequency Code Media, we are at the forefront of
+              technological innovation, exploring the cutting-edge realms of
+              Augmented Reality (AR) and Virtual Reality (VR). Our
+              technology-related projects include:
+            </p>
+            <ul>
+              <li>
+                <span>AR and VR Integration: </span> We specialize in creating
+                unique AR and VR experiences that captivate and engage
+                audiences. Our projects range from virtual tours and
+                interactive experiences to training simulations and
+                educational tools. 
+              </li>
+              <li>
+                <span>Research and Development: </span> We are committed to
+                staying ahead of the curve by investing in research and
+                development. Our team continuously explores new possibilities
+                in AR and VR, ensuring that we leverage the latest
+                advancements to deliver groundbreaking projects.
+              </li>
+            </ul>
+          </div>
+          <div class="service">
+            <div class="service-gif">
+              <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+            </div>
+            <h1>Event Management</h1>
+            <p>
+              BFC Media is where the magic of music and the art of event
+              management come together to create unforgettable experiences. We
+              specialize in orchestrating concerts and events that resonate
+              with audiences and leave a lasting impact.
+            </p>
+            <ul>
+              <li>
+                <span>Concert Management: </span> From intimate venues to
+                large-scale arenas, we handle every aspect of concert planning
+                and execution. Our services include booking artists,
+                coordinating logistics, managing stage setups, and ensuring a
+                flawless production from start to finish.
+              </li>
+              <li>
+                <span>Event Planning: </span> Whether it's a corporate event,
+                private party, or festival, we tailor our approach to meet
+                your specific needs. Our comprehensive event management covers
+                everything from concept development and vendor coordination to
+                on-site supervision and guest engagement.
+              </li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right-side END -->
+    </div>
+  </div>
+  <!-- Navbar-sm START -->
+  <div class="navbar-sm">
+    <div class="logo-sm animate__animated animate__fadeInLeft animate__delay-3s">
+      <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="" />
+    </div>
+    <button class="toggle-btn">
+      <img src="{% static 'assets/img/close clapboard.png' %}" alt="" />
+    </button>
+  </div>
+  <div class="nav-menu-sm">
+    <div class="nav-header-sm">
+      <div class="logo-sm">
+        <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="" />
+      </div>
+      <button class="close-btn">
+        <i class="fa-brands fa-xing"></i>
+      </button>
+    </div>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">Our Story</a></li>
+      <li><a href="{% url 'works' %}" >Craftings</a></li>
+      <li><a href="{% url 'service' %}" class="active">Offerings</a></li>
+      <li><a href="{% url 'projects' %}">Moments</a></li>
+      <li><a href="{% url 'gallery' %}">Art Vaults</a></li>
+      <li><a href="{% url 'team' %}">The Crew</a></li>
+      <li><a href="https://virtuai.billionairefrequencycode.com" target="_blank">Virtu AI</a></li>
+      <li><a href="{% url 'contact' %}">Connect</a></li>
+    </ul>
+  </div>
+  <!-- Navbar-sm END -->
+  <div class="service-container service-sm">
+    <div class="contact-header">
+      <h1>Services</h1>
+      <div class="background-text">SERVICES</div>
+    </div>
+    <div class="service">
+      <div class="service-gif">
+        <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+      </div>
+      <h1>Divisions and Services</h1>
+      <h1>Web Series Projects</h1>
+      <p>
+        At Billionaire Frequency Code Media, we are passionate about
+        storytelling. Our web series division focuses on:
+      </p>
+      <ul>
+        <li>
+          <span>Talented Team of Story Writers</span> - Our team of
+          skilled writers who have a flair for crafting compelling and
+          engaging narratives bring fresh perspectives and creative
+          ideas that form the backbone of our web series projects.
+        </li>
+        <li>
+          <span>Production and Shooting</span> - Our experienced
+          production team takes these scripts and brings them to life
+          through meticulous planning and execution. From pre-production
+          to post-production, we ensure that every aspect of the process
+          is handled with professionalism and attention to detail,
+          resulting in high-quality web series that captivate our
+          audience.
+        </li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-gif">
+        <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+      </div>
+      <h1>Production House</h1>
+      <p>Our Production House is the heart of our operations, where:</p>
+      <ul>
+        <li>
+          <span>Videography and Photography: </span> Our skilled
+          videographers and photographers use state-of-the-art equipment
+          to capture stunning visuals. Whether it's a corporate event, a
+          personal milestone, or a promotional campaign, we deliver
+          high-quality video and photographic content that meets the
+          highest standards of excellence.
+        </li>
+        <li>
+          <span>Poster Design: </span> Visual communication is an
+          integral part of our production process. If required, our
+          creative team designs eye-catching posters that complement our
+          video projects, ensuring that they grab attention and convey
+          the essence of the content effectively
+        </li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-gif">
+        <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+      </div>
+      <h1>YouTube Channels</h1>
+      <p>
+        To reach a diverse audience, we are launching four distinct
+        YouTube channels:
+      </p>
+      <ul>
+        <li>
+          <span>Entertainment Channel: </span> This channel is dedicated
+          to delivering a wide range of entertaining content, from
+          comedy skits and drama series to reality shows and lifestyle
+          assets/video. Our goal is to feature content that resonates with
+          viewer's interests and preferences.
+        </li>
+        <li>
+          <span>Food Channel: </span> This show features an engaging
+          anchor who travels across various geographical locations in
+          Tamil Nadu, to discover a wide array of vegetarian dishes. Our
+          aim is to present the vast variety of vegetarian dishes and
+          their authentic roots, providing viewers with an opportunity
+          to appreciate the culinary options available and most
+          importantly to dispel the myth that vegetarian food offers
+          fewer options and lacks flavour, proving that vegetarian
+          cuisine can be both diverse and delicious.
+        </li>
+        <li>
+          <span>Kids Channel: </span> Aimed at a younger audience
+          gathering an age group of 10 - 12-year-old children, our kids'
+          channel offers educational content that fosters creativity,
+          learning, and curiosity. We collaborate with doctors and
+          psychiatrists to ensure our content is developmentally
+          appropriate and provides valuable guidance on what activities
+          and learning experiences are beneficial at each stage of
+          childhood. This collaboration ensures that our programming not
+          only entertains but also supports the healthy growth and
+          development of our young viewers.
+        </li>
+        <li>
+          <span>Knowledge Information Channel: </span>This channel
+          focuses on sharing valuable insights, tips, and information
+          across various domains such as business, technology, health,
+          and personal development. Our content is designed to educate
+          and empower our viewers, helping them stay informed and make
+          better decisions in their lives.
+        </li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-gif">
+        <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+      </div>
+      <h1>Technological Projects</h1>
+      <p>
+        At Billionaire Frequency Code Media, we are at the forefront of
+        technological innovation, exploring the cutting-edge realms of
+        Augmented Reality (AR) and Virtual Reality (VR). Our
+        technology-related projects include:
+      </p>
+      <ul>
+        <li>
+          <span>AR and VR Integration: </span> We specialize in creating
+          unique AR and VR experiences that captivate and engage
+          audiences. Our projects range from virtual tours and
+          interactive experiences to training simulations and
+          educational tools. 
+        </li>
+        <li>
+          <span>Research and Development: </span> We are committed to
+          staying ahead of the curve by investing in research and
+          development. Our team continuously explores new possibilities
+          in AR and VR, ensuring that we leverage the latest
+          advancements to deliver groundbreaking projects.
+        </li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-gif">
+        <img src="{% static 'assets/img/sericon.png' %}" alt=""/>
+      </div>
+      <h1>Event Management</h1>
+      <p>
+        BFC Media is where the magic of music and the art of event
+        management come together to create unforgettable experiences. We
+        specialize in orchestrating concerts and events that resonate
+        with audiences and leave a lasting impact.
+      </p>
+      <ul>
+        <li>
+          <span>Concert Management: </span> From intimate venues to
+          large-scale arenas, we handle every aspect of concert planning
+          and execution. Our services include booking artists,
+          coordinating logistics, managing stage setups, and ensuring a
+          flawless production from start to finish.
+        </li>
+        <li>
+          <span>Event Planning: </span> Whether it's a corporate event,
+          private party, or festival, we tailor our approach to meet
+          your specific needs. Our comprehensive event management covers
+          everything from concept development and vendor coordination to
+          on-site supervision and guest engagement.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Custom JS -->
+  <script src="{% static 'script/main.js' %}"></script>
+  <script src="{% static 'script/test.js' %}"></script>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/99e1031307.js" crossorigin="anonymous"></script>
+</body>
+</html>

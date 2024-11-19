@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC - Media | Home</title>
+    <!---favicon-->
+    <link rel="icon" href="{% static 'assets/img/favicon1.png' %}" type="image/gif" >
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+</head>
+<body class="main-body">
+    <!--Audio-->
+    <audio id="clickSound" src="{% static 'assets/img/audio/shutter.mp3' %}"></audio>
+    <!-- Spinner -->
+    <div id="loading-spinner">
+        <video id="loading-video" autoplay muted>
+            <source src="{% static 'assets/video/IMG_6213.MOV' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container-fluid index-lg">
+        <div class="row no-gutters">
+            <div class="col-2 navbar-container"> <!-- Navbar-lg START -->
+                <a href="{% url 'index' %}"><img src="{% static 'assets/img/BFCLOGO.png' %}" alt="BFCLOGO" class="BFClogo"></a>
+                <img src="{% static 'assets/img/REEL 2.jpg' %}" alt="Reel" class="reel-line">
+                <div class="menu">
+                    <div class="menu-open-button">
+                        <img src="{% static 'assets/img/Reel box.png' %}" alt="Reel" class="menu-image" id="menuToggle">
+                    </div>
+                    <div class="menu-items" style="background:url('{% static 'assets/img/filmv2.png' %}') no-repeat">
+                        <a href="{% url 'index' %}" class="menu-item active soundButton">Home</a>
+                        <a href="{% url 'about' %}" class="menu-item soundButton">Our Story</a>
+                        <a href="{% url 'works' %}" class="menu-item soundButton">Craftings</a>
+                        <a href="{% url 'service' %}" class="menu-item soundButton">Offerings</a>
+                        <a href="{% url 'projects' %}" class="menu-item soundButton">Moments</a>
+                        <a href="{% url 'gallery' %}" class="menu-item soundButton">Art Vaults</a>
+                        <a href="{% url 'team' %}" class="menu-item soundButton">The Crew</a>
+                        <a href="https://virtuai.billionairefrequencycode.com" target="_blank" class="menu-item">Virtu AI</a>
+                        <a href="{% url 'contact' %}" class="menu-item soundButton">Connect</a>
+                        <div class="nav-foot">
+                            <p>©2024 BFC - Media All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Navbar-lg END -->
+            <div class="col-10 img-container"> <!-- Right-side START -->
+                <video autoplay loop>
+                    <source src="https://bfcmedia.s3.ap-south-1.amazonaws.com/BFC-Trailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="main-content">
+                    {% comment %} <p>Welcome to the</p> {% endcomment %}
+                    <h1>BILLIONAIRE FREQUENCY CODE MEDIA (P) LTD.</h1>
+                    <p><span class="blink">"</span>BFC Media<span class="blink">"</span> is a premier media production
+                        company dedicated to crafting captivating content across entertainment, business, sports, and
+                        large-scale event management. With deep-rooted expertise in the film industry and digital
+                        platforms, we excel at bringing stories to life with unmatched creativity and precision.
+                    </p>
+                </div>
+            </div> <!-- Right-side END -->
+        </div>
+    </div>
+
+    <!-- Navbar-sm START -->
+    <div class="navbar-sm">
+        <div class="logo-sm animate__animated animate__fadeInLeft animate__delay-3s">
+            <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="">
+        </div>
+        <button class="toggle-btn">
+            <img src="{% static 'assets/img/close clapboard.png' %}" alt="">
+        </button>
+    </div>
+
+    <div class="nav-menu-sm">
+        <div class="nav-header-sm">
+            <div class="logo-sm">
+                <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="BFC-logo">
+            </div>
+            <button class="close-btn">
+                <i class="fa-brands fa-xing"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a href="{% url 'index' %}" class="active">Home</a></li>
+            <li><a href="{% url 'about' %}">Our Story</a></li>
+            <li><a href="{% url 'works' %}" >Craftings</a></li>
+            <li><a href="{% url 'service' %}">Offerings</a></li>
+            <li><a href="{% url 'projects' %}">Moments</a></li>
+            <li><a href="{% url 'gallery' %}">Art Vaults</a></li>
+            <li><a href="{% url 'team' %}">The Crew</a></li>
+            <li><a href="https://virtuai.billionairefrequencycode.com" target="_blank">Virtu AI</a></li>
+            <li><a href="{% url 'contact' %}">Connect</a></li>
+        </ul>
+    </div>
+    <!-- Navbar-sm END -->
+
+    <!-- Home-sm START -->
+    <div class="home-sm">
+        <video autoplay loop>
+            <source src="https://bfcmedia.s3.ap-south-1.amazonaws.com/BFC-Trailer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="main-content-sm animate__animated animate__fadeIn animate__delay-4s">
+            <p>Welcome to the</p>
+            <h1>BILLIONAIRE FREQUENCY CODE MEDIA (P) LTD.</h1>
+            <p>"BFC Media is a premier media production company dedicated to crafting captivating content across
+                entertainment, business, sports, and large-scale event management. With deep-rooted expertise in the
+                film industry and digital platforms, we excel at bringing stories to life with unmatched creativity and
+                precision.
+            </p>
+        </div>
+    </div>
+    <!-- Home-sm END -->
+
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/99e1031307.js" crossorigin="anonymous"></script>
+    <!-- Custome JS -->
+    <script src="{% static 'script/main.js' %}"></script>
+    <script src="{% static 'script/test.js' %}"></script>
+
+</body>
+
+</html>

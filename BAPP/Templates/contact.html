@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC - Media | Connect</title>
+    <!---favicon-->
+    <link rel="icon" href="{% static 'assets/img/favicon1.png' %}" type="image/gif" >
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css ' %}">
+
+</head>
+
+<body class="contact-body">
+
+    <!--Audio-->
+    <audio id="clickSound" src="{% static 'assets/img/audio/shutter.mp3' %}"></audio>
+    <!-- Spinner -->
+    <div id="loading-spinner">
+        <video id="loading-video" autoplay muted>
+            <source src="{% static 'assets/video/IMG_6213.MOV' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container-fluid index-lg">
+        <div class="row no-gutters">
+            <div class="col-2 navbar-container"> <!-- Navbar-lg START -->
+                <a href="{% url 'index' %}"><img src="{% static 'assets/img/BFCLOGO.png' %}" alt="BFCLOGO" class="BFClogo"></a>
+                <img src="{% static 'assets/img/REEL 2.jpg' %}" alt="Reel" class="reel-line">
+                <div class="menu">
+                    <div class="menu-open-button">
+                        <img src="{% static 'assets/img/Reel box.png' %}" alt="BFC-Reel" class="menu-image" id="menuToggle">
+                    </div>
+                    <div class="menu-items" style="background:url('{% static 'assets/img/filmv2.png' %}') no-repeat">
+                        <a href="{% url 'index' %}" class="menu-item soundButton">Home</a>
+                        <a href="{% url 'about' %}" class="menu-item soundButton">Our Story</a>
+                        <a href="{% url 'works' %}" class="menu-item soundButton">Craftings</a>
+                        <a href="{% url 'service' %}" class="menu-item soundButton">Offerings</a>
+                        <a href="{% url 'projects' %}" class="menu-item soundButton">Moments</a>
+                        <a href="{% url 'gallery' %}" class="menu-item soundButton">Art Vaults</a>
+                        <a href="{% url 'team' %}" class="menu-item soundButton">The Crew</a>
+                        <a href="https://virtuai.billionairefrequencycode.com" target="_blank" class="menu-item">Virtu AI</a>
+                        <a href="{% url 'contact' %}" class="menu-item active soundButton">Connect</a>
+                        <div class="nav-foot">
+                            <p>©2024 BFC - Media All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Navbar-lg END -->
+
+            <div class="col-10"> <!-- Right-side START -->
+                <div class="contact-container">
+                    <div class="contact-header">
+
+                        {% if messages %}
+                    <div aria-live="polite" aria-atomic="true">
+                        <div class="toast-container position-fixed top-0 end-0 p-3">
+                            {% for message in messages %}
+                                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header">
+                                        <strong class="me-auto">Notification</strong>
+                                        <small>Just now</small>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-body">
+                                        {{ message }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                        <h1>Contact Us</h1>
+                        <div class="background-text">CONTACT US</div>
+                    </div>
+                    <div class="row contact-form">
+                        <div class="col-md-5 ">
+                            <div class="form-container">
+                                <form id="contactForm" method='POST' action="{% url 'contact' %}" autocomplete="off">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="Name"
+                                            placeholder="Your Name" required>
+                                    </div autocomplete="off">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="Email"
+                                            placeholder="Your Email" required>
+                                    </div autocomplete="off">
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" id="Number" name="Number"
+                                            placeholder="Your Number" required>
+                                    </div autocomplete="off">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="message" name="Message"
+                                            placeholder="Your Message" rows="5" required></textarea>
+                                    </div autocomplete="off">
+                                    <button type="submit" id="soundButton" class="btn btn-send">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="contact-info">
+                                <h2>Contact Info</h2>
+                                <p>We Believe in the Power of Collaboration. Reach Out to Us and Let's Innovate
+                                    Together!</p>
+                                <div class="st-single-contact-info">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="st-single-info-details">
+                                        <h4>E-mail</h4>
+                                        <a href="mailto:info@bfc-media.com">info@bfc-media.com</a>
+                                    </div>
+                                </div>
+                                <div class="st-single-contact-info">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a href="tel:+91 8925863890"><div class="st-single-info-details">
+                                            <h4>Phone</h4>
+                                            <span>+91 8925863890</span>
+                                        </div></a>
+                                </div>
+                                <div class="st-single-contact-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="st-single-info-details">
+                                        <a href="https://www.google.com/maps/dir/13.0477773,80.2638458/Billionaire+Frequency+Code+Media+Pvt+Ltd,+Gopalapuram,+Chennai,+Tamil+Nadu/@13.049317,80.2544802,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3a5267dba99b8e1f:0x310d70523549e3f1!2m2!1d80.2552474!2d13.0500989?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D"><h4>Address</h4>
+                                        <span>Ganesh Arcade No.13/2, Chandrabagh Avenue 2nd Street, Dr Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004</span></a>
+                                    </div>
+                                </div>
+                                <div class="contact-media">
+                                    <div class="media-container">
+                                        <a href="https://www.facebook.com/profile.php?id=61563275426874" target="blank"><i class="fa-brands fa-facebook-f"></i><span> Facebook</span></a>
+                                    </div>
+                                    <div class="media-container">
+                                        <a href="https://x.com/bfcmedia1549" target="blank"><i class="fa-brands fa-x-twitter"></i><span> Twitter</span></a>
+                                    </div>
+                                    <div class="media-container">
+                                        <a href=" https://www.instagram.com/bfc.media/" target="blank"><i class="fa-brands fa-square-instagram"></i><span>
+                                                Instagram</span></a>
+                                    </div>
+                                    <div class="media-container">
+                                        <a href="https://www.linkedin.com/company/billionaire-frequency-code-media" target="blank"><i class="fa-brands fa-linkedin"></i><span>
+                                                LinkedIn</span></a>
+                                    </div>
+                                    <div class="media-container">
+                                        <a href="https://youtube.com/@bfcmedia-c8i?si=9A_Telnfvdq2RK8I" target="blank"><i class="fa-brands fa-youtube"></i><span>
+                                                Youtube</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Right-side END -->
+        </div>
+    </div>
+    <!-- Back Button
+    <button id="backButton" class="btn btn-back"><i class="fa-solid fa-backward"></i></button> -->
+
+    <!-- Navbar-sm START -->
+    <div class="navbar-sm">
+        <div class="logo-sm animate__animated animate__fadeInLeft animate__delay-3s">
+            <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="BFC-logo">
+        </div>
+        <button class="toggle-btn">
+            <img src="{% static 'assets/img/close clapboard.png' %}" alt="">
+        </button>
+    </div>
+
+    <div class="nav-menu-sm">
+        <div class="nav-header-sm">
+            <div class="logo-sm">
+                <img src="{% static 'assets/img/BFCLOGO.png' %}" alt="BFC-logo">
+            </div>
+            <button class="close-btn">
+                <i class="fa-brands fa-xing"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">Our Story</a></li>
+            <li><a href="{% url 'works' %}">Craftings</a></li>
+            <li><a href="{% url 'service' %}">Offerings</a></li>
+            <li><a href="{% url 'projects' %}">Moments</a></li>
+            <li><a href="{% url 'gallery' %}">Art Vaults</a></li>
+            <li><a href="{% url 'team' %}">The Crew</a></li>
+            <li><a href="https://virtuai.billionairefrequencycode.com" target="_blank">Virtu AI</a></li>
+            <li><a href="{% url 'contact' %}" class="active">Connect</a></li>
+        </ul>
+    </div>
+    <!-- Navbar-sm END -->
+
+    <!-- ContactUs-sm START -->
+    <div class="contact-container contact-sm">
+        {% if messages %}
+        <div aria-live="polite" aria-atomic="true">
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                {% for message in messages %}
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Notification</strong>
+                            <small>Just now</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            {{ message }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <div class="background-text">CONTACT US</div>
+        </div>
+        <div class="row contact-form">
+            <div class="col-md-5 ">
+                <div class="form-container">
+                    <form id="contactForm-sm" autocomplete="off" method='POST' action="{% url 'contact' %}" autocomplete="off">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name-sm" name="Name" placeholder="Your Name"
+                                required>
+                        </div autocomplete="off">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email-sm" name="Email" placeholder="Your Email"
+                                required>
+                        </div autocomplete="off">
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="subject-sm" name="Number"
+                                placeholder="Your Number" required>
+                        </div autocomplete="off">
+                        <div class="form-group">
+                            <textarea class="form-control" id="message-sm" name="Message" placeholder="Your Message"
+                                rows="5" required></textarea>
+                        </div autocomplete="off">
+                        <button type="submit" class="btn btn-send">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="contact-info">
+                    <h2>Contact Info</h2>
+                    <p>We Believe in the Power of Collaboration. Reach Out to Us and Let's Innovate Together!</p>
+                    <div class="st-single-contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div class="st-single-info-details">
+                            <h4>E-mail</h4>
+                            <a href="mailto:info@bfc-media.com">info@bfc-media.com</a>
+                        </div>
+                    </div>
+                    <div class="st-single-contact-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+91 8925863890"><div class="st-single-info-details">
+                            <h4>Phone</h4>
+                            <span>+91 8925863890</span>
+                        </div></a>
+                    </div>
+                    <div class="st-single-contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="st-single-info-details">
+                            <a href="https://www.google.com/maps/dir/13.0477773,80.2638458/Billionaire+Frequency+Code+Media+Pvt+Ltd,+Gopalapuram,+Chennai,+Tamil+Nadu/@13.049317,80.2544802,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3a5267dba99b8e1f:0x310d70523549e3f1!2m2!1d80.2552474!2d13.0500989?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D"><h4>Address</h4>
+                            <span>Ganesh Arcade No.13/2, Chandrabagh Avenue 2nd Street, Dr Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004</span></a>
+                        </div>
+                    </div>
+                    <div class="contact-media">
+                        <div class="media-container">
+                            <a href="https://www.facebook.com/profile.php?id=61563275426874" tatarget="blank"rget><i class="fa-brands fa-facebook-f"></i><span> Facebook</span></a>
+                        </div>
+                        <div class="media-container">
+                            <a href="https://x.com/bfcmedia1549" target="blank"><i class="fa-brands fa-x-twitter"></i><span> Twitter</span></a>
+                        </div>
+                        <div class="media-container">
+                            <a href=" https://www.instagram.com/bfc.media/" target="blank"><i class="fa-brands fa-square-instagram"></i><span>
+                                    Instagram</span></a>
+                        </div>
+                        <div class="media-container">
+                            <a href="https://www.linkedin.com/company/billionaire-frequency-code-media" target="blank"><i class="fa-brands fa-linkedin"></i><span>
+                                    LinkedIn</span></a>
+                        </div>
+                        <div class="media-container">
+                            <a href="https://youtube.com/@bfcmedia-c8i?si=9A_Telnfvdq2RK8I" target="blank"><i class="fa-brands fa-youtube"></i><span>
+                                    Youtube</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ContactUs-sm END -->
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.1/dist/jquery.validate.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/99e1031307.js" crossorigin="anonymous"></script>
+
+    <script> // Form validation
+
+    </script>
+    <script src="{% static 'script/main.js' %}"></script>
+    <script src="{% static 'script/test.js' %}"></script>
+
+</body>
+
+</html>

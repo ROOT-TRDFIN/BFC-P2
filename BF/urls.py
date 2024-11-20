@@ -6,6 +6,8 @@ from django.urls import path
 from  django.conf import settings
 from BAPP import views
 from django.conf.urls.static import  static
+from django.conf.urls import handler404
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name='index'),
@@ -15,5 +17,8 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('service/', views.service, name='service'),
     path('works/', views.works, name='works'),
-    path('contact/', views.contact, name='contact')
+    path('contact/', views.contact, name='contact'),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'BAPP.views.custom_404_view'

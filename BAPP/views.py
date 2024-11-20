@@ -8,6 +8,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.utils.html import strip_tags
 from BAPP.models import BFCONTACT
+from django.http import HttpResponseNotFound
 # Create your views here.
 
 #Index
@@ -94,3 +95,6 @@ def contact(request):
             return redirect('contact')
         
     return render(request,'contact.html')
+
+def custom_404_view(request, exception=None):
+    return HttpResponseNotFound('Page not found')

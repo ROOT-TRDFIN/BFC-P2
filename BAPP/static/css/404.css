@@ -1,0 +1,43 @@
+.error-page{
+	background: #000;
+	height: 100vh;
+ }
+ .error-inner{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  height: 100%;
+ }
+ .error-inner h1 {
+	 font-size: 200px;
+	 color: rgb(55, 52, 52);
+	 margin: 0;
+	 text-align: center;
+	 text-shadow: 3px 7px 10px #fec544;
+	 animation: bounce 5s infinite ease-in-out;
+ }
+
+ @keyframes bounce {
+	 0%, 100% {
+		 transform: translateY(0);
+	 }
+	 30% {
+		 transform: translateY(-10px);
+	 }
+	 50% {
+		 transform: translateY(0);
+	 }
+	 70% {
+		 transform: translateY(-10px);
+	 }
+	 100% {
+		 transform: translateY(0);
+	 }
+ }
+
+ .error-inner p{
+	 font-size: 20px;
+	 color: gray;
+	 text-align: center;
+ }

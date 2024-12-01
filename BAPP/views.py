@@ -9,10 +9,12 @@ from django.contrib import messages
 from django.utils.html import strip_tags
 from BAPP.models import BFCONTACT
 from django.http import HttpResponseNotFound
+from django.views.decorators.cache import never_cache
 # Create your views here.
 
 #Index
 
+@never_cache
 def index(request):
     return render(request, 'index.html')
 #about
@@ -29,7 +31,7 @@ def gallery(request):
 #team
 
 def team(request):
-    return render(request, 'ourteam.html')
+    return render(request, 'team.html')
 
 #projects
 def projects(request):

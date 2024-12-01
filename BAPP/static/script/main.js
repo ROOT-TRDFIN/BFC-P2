@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
 $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
         loop: true,  // Ensure it loops if you want infinite scrolling
-        margin: 10,  // You can set a margin between items if desired
         nav: true,   // Enable navigation if needed
         autoplay: true,  // Enable autoplay
         autoplayTimeout: 5000,  // 3 seconds delay

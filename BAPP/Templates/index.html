@@ -55,8 +55,14 @@
                 </div>
             </div> <!-- Navbar-lg END -->
             <div class="col-10 img-container"> <!-- Right-side START -->
-                <video autoplay loop>
+                {% comment %} <video autoplay loop>
                     <source src="https://bfcmedia.s3.ap-south-1.amazonaws.com/BFC-Trailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> {% endcomment %}
+                <video autoplay muted loop >
+                    <source src="{% static 'assets/video/BFC-Trailer.mp4' %}" type="video/mp4">
+                    <source src="{% static 'assets/video/BFC-Trailer.webm' %}" type="video/webm">
+                    <source src="{% static 'assets/video/BFC-Trailer.ogv' %}" type="video/ogg">
                     Your browser does not support the video tag.
                 </video>
                 <div class="main-content">
@@ -107,8 +113,14 @@
 
     <!-- Home-sm START -->
     <div class="home-sm">
-        <video autoplay loop>
+        {% comment %} <video autoplay loop>
             <source src="https://bfcmedia.s3.ap-south-1.amazonaws.com/BFC-Trailer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video> {% endcomment %}
+        <video autoplay muted loop >
+            <source src="{% static 'assets/video/BFC-Trailer.mp4' %}" type="video/mp4">
+            <source src="{% static 'assets/video/BFC-Trailer.webm' %}" type="video/webm">
+            <source src="{% static 'assets/video/BFC-Trailer.ogv' %}" type="video/ogg">
             Your browser does not support the video tag.
         </video>
         <div class="main-content-sm animate__animated animate__fadeIn animate__delay-4s">
